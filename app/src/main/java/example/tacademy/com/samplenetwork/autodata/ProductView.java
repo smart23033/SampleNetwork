@@ -6,6 +6,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import example.tacademy.com.samplenetwork.R;
@@ -20,7 +22,7 @@ public class ProductView extends FrameLayout {
     }
 
     @BindView(R.id.image_thumbnail)
-    URLImageView thumbVIew;
+    ImageView thumbView;
     @BindView(R.id.text_name)
     TextView nameView;
     @BindView(R.id.text_like)
@@ -43,6 +45,11 @@ public class ProductView extends FrameLayout {
         likeView.setText("" + product.getScore());
         downloadView.setText("" + product.getDownloadCount());
         descriptionView.setText(product.getDescription());
-        thumbVIew.setImageURL(product.getThumbnailUrl());
+        Picasso.with(getContext())
+                .load(product.getThumbnailUrl())
+                .placeholder(R.drawable.ic_stub)
+                .error(R.drawable.ic_error)
+                .into(thumbView);
     }
+
 }

@@ -21,6 +21,7 @@ android {
 }
 
 dependencies {
+    compile 'com.github.franmontiel:PersistentCookieJar:v0.9.3'
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.1.1'
@@ -28,4 +29,6 @@ dependencies {
     apt 'com.jakewharton:butterknife-compiler:8.0.1'
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.mcxiaoke.next:recycler:1.4.1'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }
